@@ -1,0 +1,23 @@
+{
+  "name": "websock",
+  "version": "1.0.0",
+  "description": "Websock pracrice",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JWyman482/websock.git"
+  },
+  "author": "John Wyman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JWyman482/websock/issues"
+  },
+  "homepage": "https://github.com/JWyman482/websock#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "ws": "^8.0.0"
+  }
+}
