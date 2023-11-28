@@ -12,12 +12,16 @@ wss.on('connection', (ws) => {
 
     ws.on('close', () => { console.log('[Server] A client disconnected') });
 
-    ws.on('message', (message) => {
+    ws.on('message', (message, isBinary) => {
+        message = isBinary ? message : message.toString();
         console.log('[Server] Received message: %s', message);
         
         // Broadcast to everyone else connected
         wss.clients.forEach(function each(client) {
-            if (client !== ws && client.readyState === WebSocket.OPEN) {
+            // if (client !== ws && client.readyState === WebSocket.OPEN) {
+            //     client.send(message);
+            // }
+            if (client.readyState === WebSocket.OPEN) {
                 client.send(message);
             }
         });
