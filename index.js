@@ -2,9 +2,9 @@
 const express = require('express');
 const WebSocket = require('ws');
 const SocketServer = require('ws').Server;
+const mysql = require('mysql');
 
 const server = express().listen(3000);
-
 const wss = new SocketServer({ server });
 
 wss.on('connection', (ws) => {
@@ -18,9 +18,6 @@ wss.on('connection', (ws) => {
         
         // Broadcast to everyone else connected
         wss.clients.forEach(function each(client) {
-            // if (client !== ws && client.readyState === WebSocket.OPEN) {
-            //     client.send(message);
-            // }
             if (client.readyState === WebSocket.OPEN) {
                 client.send(message);
             }
