@@ -18,6 +18,7 @@
   "homepage": "https://github.com/JWyman482/websock#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "sqlite3": "^5.1.6",
     "ws": "^8.0.0"
   }
 }
